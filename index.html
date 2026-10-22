@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English File Word Trainer</title>
+    <!-- Подключение внешних стилей -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- НАСТРОЙКИ: Стартовый экран приложения -->
+        <div id="screen-settings" class="screen">
+            <h1>English File Trainer</h1>
+            <p class="subtitle">Словарный тренажер для группы Елизаветы (Intermediate)</p>
+            
+            <div class="settings-form">
+                <!-- 1. Выбор модуля учебника -->
+                <div class="setting-group">
+                    <label>Выберите модуль:</label>
+                    <div id="module-options" class="module-grid">
+                        <!-- Сюда JavaScript автоматически добавит карточки доступных модулей -->
+                    </div>
+                </div>
+
+                <!-- 2. Выбор типа игрового задания -->
+                <div class="setting-group">
+                    <label>Тип задания:</label>
+                    <div class="radio-options">
+                        <label>
+                            <input type="radio" name="game-mode" value="quiz" checked> 
+                            Выбор варианта
+                        </label>
+                        <label>
+                            <input type="radio" name="game-mode" value="input"> 
+                            Ввод вручную
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 3. Выбор направления перевода -->
+                <div class="setting-group">
+                    <label>Направление перевода:</label>
+                    <div class="radio-options">
+                        <label>
+                            <input type="radio" name="lang-mode" value="en-ru" checked> 
+                            EN ➔ RU
+                        </label>
+                        <label>
+                            <input type="radio" name="lang-mode" value="ru-en"> 
+                            RU ➔ EN
+                        </label>
+                    </div>
+                </div>
+
+                <button id="start-btn" class="main-btn">Начать тренировку</button>
+            </div>
+        </div>
+
+        <!-- ИГРА: Экран с текущим раундом и вопросами -->
+        <div id="screen-game" class="screen hidden">
+            <div class="game-header">
+                <!-- Кнопка досрочного возврата в левом углу шапки -->
+                <button id="quit-btn" class="quit-link-btn">← В меню</button>
+                <span id="progress-text">Вопрос 1 из 10</span>
+                <span id="score-text">Счет: 0</span>
+            </div>
+
+            <!-- Визуальная полоса прогресса (Progress Bar) -->
+            <div class="progress-bar-container">
+                <div id="progress-bar-fill" class="progress-bar-fill"></div>
+            </div>
+            
+            <!-- Поле, где показывается само слово для перевода -->
+            <div class="word-card">
+                <h2 id="target-word">Word</h2>
+            </div>
+
+            <!-- Контейнер для кнопок (режим "Выбор варианта" — сетка 2х2) -->
+            <div id="quiz-options" class="options-grid">
+                <!-- Кнопки будут создаваться динамически через JavaScript -->
+            </div>
+
+            <!-- Контейнер для текстового поля (режим "Ввод вручную") -->
+            <div id="input-container" class="input-area hidden">
+                <input type="text" id="user-answer" placeholder="Введите перевод здесь..." autocomplete="off">
+                <button id="submit-btn" class="main-btn">Проверить</button>
+            </div>
+
+            <!-- Блок обратной связи -->
+            <div id="feedback" class="feedback-box hidden"></div>
+            
+            <!-- Кнопка перехода дальше -->
+            <button id="next-btn" class="main-btn hidden">Дальше</button>
+        </div>
+
+        <!-- ИТОГИ: Финальный экран результатов -->
+        <div id="screen-results" class="screen hidden">
+            <h2>Тренировка завершена!</h2>
+            <div class="result-stats">
+                <p>Ваш итоговый результат:</p>
+                <div class="final-score" id="final-score">0 / 0</div>
+                <p id="result-message">Отличный результат!</p>
+            </div>
+            <button id="restart-btn" class="main-btn">В главное меню</button>
+        </div>
+
+        <!-- ПОДВАЛ (FOOTER) -->
+        <footer class="app-footer">
+            <p>Сделано для Горьковской библиотеки</p> 
+            <p><a href="https://github.com/jessevirgin" target="_blank" style="color: #4f46e5; text-decoration: none; font-weight: 600;">by Ilya</a></p>
+        </footer>
+
+
+    </div>
+
+    <!-- Подключение логики приложения -->
+    <script src="app.js"></script>
+</body>
+</html>

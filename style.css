@@ -1,0 +1,316 @@
+/* Общие настройки шрифтов и сброс лишних отступов */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #334155;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Основной контейнер приложения */
+.app-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 650px;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(148, 163, 184, 0.12);
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #1e1b4b;
+    text-align: center;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 26px;
+    color: #1e1b4b;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 15px;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.setting-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 15px;
+    color: #475569;
+}
+
+/* Сетки для кнопок настроек и плиток модулей */
+.radio-options {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.module-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Базовый нейтральный стиль для всех интерактивных карточек */
+.radio-options label, .module-grid label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+    color: #334155;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+.radio-options label:hover, .module-grid label:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+/* Единый стиль подсветки для ВСЕХ выбранных карточек на экране (индиго) */
+.radio-options label.selected-card, 
+.module-grid label.selected-card {
+    border-color: #4f46e5 !important;
+    background-color: #eef2ff !important;
+    color: #4f46e5 !important;
+}
+
+/* Главная синяя кнопка старта */
+.main-btn {
+    width: 100%;
+    padding: 16px;
+    background-color: #4f46e5;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.12);
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.main-btn:hover {
+    background-color: #4338ca;
+    transform: translateY(-1px);
+}
+
+/* --- ИГРОВОЙ ЭКРАН --- */
+.game-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.quit-link-btn {
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quit-link-btn:hover {
+    background-color: #e0e7ff;
+    border-color: #c7d2fe;
+    color: #4f46e5; 
+}
+
+#progress-text {
+    grid-column: 2;
+    text-align: center;
+    font-size: 14px;
+    color: #475569;
+}
+
+#score-text {
+    justify-self: end;
+    font-size: 14px;
+    color: #475569;
+    background-color: #f8fafc;
+    padding: 4px 10px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 6px;
+    background-color: #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #10b981;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.word-card {
+    background: linear-gradient(135deg, #f5f7ff 0%, #eef2ff 100%);
+    padding: 48px 24px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    border: 1px solid #e0e7ff;
+}
+
+.word-card h2 {
+    color: #312e81;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 550px) {
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.option-btn {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: #ffffff;
+    color: #334155;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.option-btn:hover:not([disabled]) {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.option-btn.correct, .input-success {
+    background-color: #e6f7ed !important;
+    border-color: #86efac !important;
+    color: #166534 !important;
+}
+
+.option-btn.wrong, .input-error {
+    background-color: #fdebee !important;
+    border-color: #fca5a5 !important;
+    color: #991b1b !important;
+}
+
+.input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+#user-answer {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    font-size: 16px;
+    background-color: #f8fafc;
+}
+
+.feedback-box {
+    padding: 14px;
+    border-radius: 14px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.feedback-box.correct {
+    background-color: #e6f7ed;
+    color: #166534;
+}
+
+.feedback-box.wrong {
+    background-color: #fdebee;
+    color: #991b1b;
+}
+
+.result-stats {
+    text-align: center;
+    margin: 35px 0;
+}
+
+.final-score {
+    font-size: 56px;
+    font-weight: 800;
+    margin: 20px 0;
+}
+
+#result-message {
+    font-size: 16px;
+    color: #475569;
+    font-weight: 500;
+}
+.app-footer {
+    margin-top: 35px;
+    text-align: center;
+    font-size: 13px;
+    color: #94a3b8;
+    font-weight: 500;
+}
