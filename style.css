@@ -314,3 +314,7 @@ label {
     color: #94a3b8;
     font-weight: 500;
 }
+/* Прячем блок выбора ручного ввода, чтобы не ломать верстку */
+.settings-form .setting-group:nth-child(2) {
+    display: none !important;
+}

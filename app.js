@@ -336,7 +336,7 @@ const vocabularyData = {
 let currentWords = [];
 let currentIndex = 0;
 let score = 0;
-let gameMode = 'quiz'; 
+let gameMode = 'quiz'; // Режим всегда зафиксирован на тест
 let langMode = 'en-ru'; 
 let selectedModuleKey = "7A"; 
 
@@ -400,15 +400,17 @@ function initializeApp() {
 }
 
 // ЛОГИКА ЗАПУСКА ТРЕНИРОВКИ
-// ЛОГИКА ЗАПУСКА ТРЕНИРОВКИ (ИСПРАВЛЕН Баг 0/0 + УВЕЛИЧЕНО ДО 30 ВОПРОСОВ)
 startBtn.addEventListener('click', () => {
     if (!selectedModuleKey || !vocabularyData[selectedModuleKey]) return;
 
-    gameMode = document.querySelector('input[name="game-mode"]:checked').value;
+    // ЗАКОММЕНТИРОВАНО (просто добавили // в начало строки):
+    // gameMode = document.querySelector('input[name="game-mode"]:checked').value;
+    
+    // Направление перевода оставляем работать:
     langMode = document.querySelector('input[name="lang-mode"]:checked').value;
 
     currentWords = [...vocabularyData[selectedModuleKey].words];
-    currentWords.sort(() => Math.random() - 0.5);
+    // ... дальше ваш код идет без изменений ...
 
     // СОЗДАЕМ И УСТАНАВЛИВАЕМ КОЛИЧЕСТВО ВОПРОСОВ (30)
     const questionsPerSession = 30; 
