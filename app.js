@@ -400,6 +400,7 @@ function initializeApp() {
 }
 
 // ЛОГИКА ЗАПУСКА ТРЕНИРОВКИ
+// ЛОГИКА ЗАПУСКА ТРЕНИРОВКИ (ИСПРАВЛЕН Баг 0/0 + УВЕЛИЧЕНО ДО 30 ВОПРОСОВ)
 startBtn.addEventListener('click', () => {
     if (!selectedModuleKey || !vocabularyData[selectedModuleKey]) return;
 
@@ -409,9 +410,13 @@ startBtn.addEventListener('click', () => {
     currentWords = [...vocabularyData[selectedModuleKey].words];
     currentWords.sort(() => Math.random() - 0.5);
 
-    // Берем 10 случайных слов на один раунд из нашего списка
-    if (currentWords.length > 10) {
-        currentWords = currentWords.slice(0, 10);
+    // СОЗДАЕМ И УСТАНАВЛИВАЕМ КОЛИЧЕСТВО ВОПРОСОВ (30)
+    const questionsPerSession = 30; 
+    const totalQuestions = Math.min(questionsPerSession, currentWords.length);
+
+    // Берем 30 случайных слов на один раунд из нашего списка
+    if (currentWords.length > totalQuestions) {
+        currentWords = currentWords.slice(0, totalQuestions);
     }
 
     currentIndex = 0;
