@@ -412,14 +412,18 @@ startBtn.addEventListener('click', () => {
     currentWords = [...vocabularyData[selectedModuleKey].words];
     // ... дальше ваш код идет без изменений ...
 
-    // СОЗДАЕМ И УСТАНАВЛИВАЕМ КОЛИЧЕСТВО ВОПРОСОВ (30)
+    // Алгоритм Фишера-Йетса для случайного перемешивания всего массива слов
+    for (let i = currentWords.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentWords[i], currentWords[j]] = [currentWords[j], currentWords[i]];
+    }
+
+    // УСТАНАВЛИВАЕМ КОЛИЧЕСТВО ВОПРОСОВ (30)
     const questionsPerSession = 30; 
     const totalQuestions = Math.min(questionsPerSession, currentWords.length);
 
-    // Берем 30 случайных слов на один раунд из нашего списка
-    if (currentWords.length > totalQuestions) {
-        currentWords = currentWords.slice(0, totalQuestions);
-    }
+    // Теперь slice заберет 30 слов, которые уже случайно перемешаны!
+    currentWords = currentWords.slice(0, totalQuestions);
 
     currentIndex = 0;
     score = 0;
