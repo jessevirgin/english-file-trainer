@@ -301,7 +301,7 @@ const vocabularyData = {
             { en: "blurred boundaries", ru: "размытые границы (между мирами)" },
             { en: "gothic romance", ru: "готический роман" },
             { en: "frankenstein's monster", ru: "монстр Франкенштейна" },
-            { en: "count dracula", ru: "граф Дракула" },
+            { en: "count Dracula", ru: "граф Дракула" },
             { en: "shapeshifting werewolf", ru: "оборотень-перевертыш" },
             { en: "eerie silence", ru: "жуткая тишина" },
             { en: "gloomy castle", ru: "мрачный замок" },
