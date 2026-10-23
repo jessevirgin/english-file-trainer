@@ -152,7 +152,7 @@ const vocabularyData = {
             { en: "when this course finishes", ru: "когда этот курс закончится" },
             { en: "if it rains at the weekend", ru: "если в выходные пойдет дождь" },
             { en: "make a better decision", ru: "принять лучшее решение" },
-            { en: "go to uni", ru: "учиться в университете" },
+            { en: "go to uni", ru: "учиться в университете/пойти или поступить в унив." },
             { en: "it depends what you want to do", ru: "это зависит от того, что ты хочешь делать" },
             { en: "medicine or dentistry", ru: "медицина или стоматология" },
             { en: "media studies", ru: "изучение СМИ" },
