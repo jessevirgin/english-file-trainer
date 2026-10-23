@@ -249,7 +249,7 @@ const vocabularyData = {
             { en: "spellbound", ru: "заколдованный / очарованный" },
             { en: "cauldron", ru: "ведьмин котел" },
             { en: "chilling", ru: "леденящий душу" },
-            { en: "scaredy-cat", ru: "трусишка" },
+            { en: "scaredy-cat", ru: "боязливый" },
             { en: "graveyard shift", ru: "ночная смена" },
             { en: "witching hour", ru: "колдовской час (полночь)" },
             { en: "skeleton in the closet", ru: "скелет в шкафу (тайный постыдный факт)" },
