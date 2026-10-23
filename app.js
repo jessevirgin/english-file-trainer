@@ -603,13 +603,13 @@ function showResultsScreen() {
         resultMessageElement.textContent = "Невероятно! Идеальный результат, вы выучили все слова! 🎉";
         finalScoreElement.style.color = "#166534";
     } else if (percentage >= 70) {
-        resultMessageElement.textContent = "Хорошая работа! Отличные знания лексики модуля! 👍";
+        resultMessageElement.textContent = "Хорошая работа! Отличные знания лексики модуля!";
         finalScoreElement.style.color = "#4f46e5";
     } else if (percentage >= 40) {
-        resultMessageElement.textContent = "Неплохо, но стоит ещё немного повторить материал. 📚";
+        resultMessageElement.textContent = "Неплохо, но стоит ещё немного повторить материал.";
         finalScoreElement.style.color = "#d97706";
     } else {
-        resultMessageElement.textContent = "Нужно подучить слова модуля и попробовать снова! 🔄";
+        resultMessageElement.textContent = "Нужно подучить слова модуля и попробовать снова!";
         finalScoreElement.style.color = "#991b1b";
     }
 }
