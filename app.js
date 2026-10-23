@@ -333,7 +333,6 @@ const vocabularyData = {
             { en: "trick or treat", ru: "кошелек или жизнь" },
             { en: "candy corn", ru: "кукурузные конфеты" },
             { en: "spooktacular night", ru: "потрясающе-жуткая ночь" },
-            { en: "thriller music video", ru: "музыкальный клип Триллер" },
             { en: "corpse bride", ru: "труп невесты" },
             { en: "hocus pocus", ru: "фокус-покус / черная магия" },
 
